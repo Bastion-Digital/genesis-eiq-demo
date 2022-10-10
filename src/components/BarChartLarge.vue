@@ -6,8 +6,8 @@
       type="bar"
       :options="chartOptions"
       :series="series"
-      v-on:data-point-mouse-enter="updateChartIndex"
-    ></apexchart>
+      @data-point-mouse-enter="updateChartIndex"
+    />
   </div>
 </template>
 

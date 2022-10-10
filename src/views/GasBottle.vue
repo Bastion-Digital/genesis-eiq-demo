@@ -1,11 +1,11 @@
-<template >
+<template>
   <div class="bg-white h-full">
     <div>
       <!-- Top Bar -->
       <div class="flex-grow-0 text-left w-full top bottom gen-bg text-white">
         <TopNavigation
           title="Order LPG Gas"
-          conversionActive="false"
+          conversion-active="false"
           link="/"
         />
       </div>
@@ -14,12 +14,10 @@
       >
         <div class="flex-grow-1 flex items-center text-left w-full mt-4">
           <div class="flex justify-between items-center w-full">
-
-            
             <button
               type="button"
-              @click="counterDown()"
               class="w-16 flex border-1 border-black justify-center items-center mr-2 rounded-full"
+              @click="counterDown()"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +45,11 @@
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
               >
-                <rect width="122" height="210" fill="url(#pattern0)" />
+                <rect
+                  width="122"
+                  height="210"
+                  fill="url(#pattern0)"
+                />
                 <defs>
                   <pattern
                     id="pattern0"
@@ -82,8 +84,8 @@
             </div>
             <button
               type="button"
-              @click="counterUp()"
               class="w-16 flex border-1 border-black justify-center items-center mr-2 rounded-full"
+              @click="counterUp()"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -103,15 +105,21 @@
           </div>
         </div>
         <div class="flex flex-col flex-grow-0 shadow p-4 mt-6 rounded-lg">
-          <div class="font-semibold pb-2">Delivery Information</div>
+          <div class="font-semibold pb-2">
+            Delivery Information
+          </div>
           <div class="text-xs grey font-light">
             Property (delivering) address:
           </div>
-          <div class="text-sm pb-2 mb-4 border-b-2">123 Genesis Way</div>
+          <div class="text-sm pb-2 mb-4 border-b-2">
+            123 Genesis Way
+          </div>
           <div class="text-xs grey font-light">
             Select an Installation Point
           </div>
-          <div class="text-sm pb-2 border-b-2">ICP: 0010634262GLB8Ey</div>
+          <div class="text-sm pb-2 border-b-2">
+            ICP: 0010634262GLB8Ey
+          </div>
         </div>
         <!-- Speech Bubble -->
         <router-link
@@ -119,13 +127,18 @@
           type="relative button"
           class="cursor:pointer text-center bg-background p-2 mt-6 shadow-lg text-white rounded-3xl ml-10 mr-10 space-b-4"
         >
-          <div class="font-semibold">Continue</div>
+          <div class="font-semibold">
+            Continue
+          </div>
         </router-link>
 
         <!-- Speech Bubble -->
-        <div v-if="showSpeechBubble" class="absolute left-16 top-24 w-3/4 h-16">
+        <div
+          v-if="showSpeechBubble"
+          class="absolute left-16 top-24 w-3/4 h-16"
+        >
           <div class="relative bg-gray-300 shadow rounded-sm p-2">
-            <div class="absolute -bottom-2 right-4 triangle-up"></div>
+            <div class="absolute -bottom-2 right-4 triangle-up" />
             <p class="text-xs">
               Monthly view shows seasonal usage trends. Click on June's bar to
               view this day by day.
@@ -134,8 +147,6 @@
         </div>
       </div>
     </div>
-
-
   </div>
 </template>
 
@@ -150,6 +161,9 @@ import playstore from "/src/assets/playstore.png";
 
 export default {
   name: "Usage",
+  components: {
+    TopNavigation,
+  },
   data() {
     return {
       gasbottle: gasbottle,
@@ -203,9 +217,6 @@ export default {
       ls.orderGas = true;
       window.sessionStorage.setItem("pagesViewed", JSON.stringify(ls));
     }
-  },
-  components: {
-    TopNavigation,
   },
   methods: {
     counterUp() {

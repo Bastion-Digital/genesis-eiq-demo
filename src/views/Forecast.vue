@@ -1,12 +1,15 @@
 <template class="bg-white">
-  <div ref="device_frame" class="bg-white fullScreen">
+  <div
+    ref="device_frame"
+    class="bg-white fullScreen"
+  >
     <!-- Dashboard Heading -->
 
     <div>
       <div class="flex-grow-0 text-left w-full top bottom gen-bg text-white">
         <TopNavigation
           title="Electricity Forecast"
-          conversionActive="false"
+          conversion-active="false"
           link="/"
         />
       </div>
@@ -14,7 +17,10 @@
         <div
           class="forecast-top bg-white bubble text-black shadow rounded-xl p-6 z-10"
         >
-          <div class="absolute -bottom-2 triangle-up" style="left: 47.5%"></div>
+          <div
+            class="absolute -bottom-2 triangle-up"
+            style="left: 47.5%"
+          />
           <p class="text-sm text-center">
             We analyse the live weather forecast, customer's usage patterns and
             days of the week to estimate the energy forecast for each customer
@@ -30,7 +36,9 @@
           to="/usage/monthly"
           class="flex justify-between items-center cursor:pointer w-full color-light-black border-b border-gray-300 py-2"
         >
-          <div class="flex text-left text-sm">Today's Forecast</div>
+          <div class="flex text-left text-sm">
+            Today's Forecast
+          </div>
           <div class="discount">
             <p>Incl. discount</p>
           </div>
@@ -53,17 +61,17 @@
                 <div
                   class="text-left text-4xl font-semibold font-largecurrency tracking-wide"
                 >
-                  {{ this.currentDate.generatedDollar }}
+                  {{ currentDate.generatedDollar }}
                 </div>
                 <div
                   class="text-left text-xl font-semibold font-largecurrency tracking-wide"
                 >
-                  .{{  (Math.round(this.currentDate.generatedCents * 100) / 100) }}
+                  .{{ (Math.round(currentDate.generatedCents * 100) / 100) }}
                 </div>
               </div>
               <div class="flex pt-1">
                 <div class="text-xs font-light text-left">
-                  ${{ this.currentDate.min }}
+                  ${{ currentDate.min }}
                 </div>
                 <div class="text-xs">
                   <svg
@@ -77,11 +85,15 @@
                       d="M3.21825 4.05261H4.39915V8.72533C4.39915 8.87613 4.52302 9 4.67993 9H5.51949C5.67364 9 5.80027 8.87613 5.80027 8.72533V4.05261H6.98117C7.17661 4.05261 7.27295 3.82103 7.13532 3.68639L5.25248 2.06261C5.16715 1.97913 5.02952 1.97913 4.94418 2.06261L3.0641 3.68639C2.92647 3.82103 3.02556 4.05261 3.21825 4.05261Z"
                       fill="#464958"
                     />
-                    <rect width="10" height="1" fill="#464958" />
+                    <rect
+                      width="10"
+                      height="1"
+                      fill="#464958"
+                    />
                   </svg>
                 </div>
                 <div class="ml-2 text-xs font-light text-left">
-                  ${{ this.currentDate.max }}
+                  ${{ currentDate.max }}
                 </div>
                 <div class="text-xs">
                   <svg
@@ -110,22 +122,22 @@
             <div class="w-2/5">
               <div>
                 <div
-                  v-show="this.currentDate.description.length > 0"
+                  v-show="currentDate.description.length > 0"
                   class="text-xs font-light pb- text-center w-full"
                 >
-                  {{ this.currentDate.description }}
+                  {{ currentDate.description }}
                 </div>
               </div>
               <div class="flex justify-center items-center px-2 pb-2 w-full">
                 <img
-                  v-if="this.currentDate.icon.length > 42"
-                  :src="this.currentDate.icon"
+                  v-if="currentDate.icon.length > 42"
+                  :src="currentDate.icon"
                   class="h-12"
-                />
+                >
               </div>
               <div class="flex pt-1 w-full align-center justify-center">
                 <div class="text-xs font-light text-left">
-                  {{ this.currentDate.min_temp }} ºC
+                  {{ currentDate.min_temp }} ºC
                 </div>
                 <div class="text-xs">
                   <svg
@@ -139,11 +151,15 @@
                       d="M3.21825 4.05261H4.39915V8.72533C4.39915 8.87613 4.52302 9 4.67993 9H5.51949C5.67364 9 5.80027 8.87613 5.80027 8.72533V4.05261H6.98117C7.17661 4.05261 7.27295 3.82103 7.13532 3.68639L5.25248 2.06261C5.16715 1.97913 5.02952 1.97913 4.94418 2.06261L3.0641 3.68639C2.92647 3.82103 3.02556 4.05261 3.21825 4.05261Z"
                       fill="#464958"
                     />
-                    <rect width="10" height="1" fill="#464958" />
+                    <rect
+                      width="10"
+                      height="1"
+                      fill="#464958"
+                    />
                   </svg>
                 </div>
                 <div class="ml-2 text-xs font-light text-left">
-                  {{ this.currentDate.max_temp }} ºC
+                  {{ currentDate.max_temp }} ºC
                 </div>
                 <div class="text-xs">
                   <svg
@@ -177,9 +193,13 @@
             to="/usage/daily"
             class="flex justify-between items-center cursor:pointer w-full color-light-black border-b border-gray-300 py-2 pt-8"
           >
-            <div class="flex text-left text-sm">Next 6 days forecast</div>
+            <div class="flex text-left text-sm">
+              Next 6 days forecast
+            </div>
             <div class="text-grey-300 text-xs">
-              <p v-if="startDay.length > 0">{{ startDay }} - {{ endDay }}</p>
+              <p v-if="startDay.length > 0">
+                {{ startDay }} - {{ endDay }}
+              </p>
             </div>
           </router-link>
 
@@ -211,7 +231,9 @@
                   </div>
                 </div>
                 <div class="flex pt-1">
-                  <div class="text-xs font-light text-left">${{ weekMax }}</div>
+                  <div class="text-xs font-light text-left">
+                    ${{ weekMax }}
+                  </div>
                   <div class="text-xs">
                     <svg
                       style="height: 1em; width: 1em"
@@ -224,7 +246,11 @@
                         d="M3.21825 4.05261H4.39915V8.72533C4.39915 8.87613 4.52302 9 4.67993 9H5.51949C5.67364 9 5.80027 8.87613 5.80027 8.72533V4.05261H6.98117C7.17661 4.05261 7.27295 3.82103 7.13532 3.68639L5.25248 2.06261C5.16715 1.97913 5.02952 1.97913 4.94418 2.06261L3.0641 3.68639C2.92647 3.82103 3.02556 4.05261 3.21825 4.05261Z"
                         fill="#464958"
                       />
-                      <rect width="10" height="1" fill="#464958" />
+                      <rect
+                        width="10"
+                        height="1"
+                        fill="#464958"
+                      />
                     </svg>
                   </div>
                   <div class="ml-2 text-xs font-light text-left">
@@ -262,8 +288,13 @@
       <!-- <div class='text-sm'><pre>{{screenWidthPoints}}</pre></div> -->
       <div class="relative">
         <div class="px-6 py-2 grid grid-cols-6 gap-2">
-          <div class="flex flex-col" ref="colone">
-            <div class="text-center text-sm">{{ dayOne.day }}</div>
+          <div
+            ref="colone"
+            class="flex flex-col"
+          >
+            <div class="text-center text-sm">
+              {{ dayOne.day }}
+            </div>
             <div class="text-center text-xxs font-bold mb-2">
               {{ dayOne.date }}
             </div>
@@ -274,7 +305,7 @@
                 v-if="dayOne.icon.length > 42"
                 :src="dayOne.icon"
                 class="h-8"
-              />
+              >
             </div>
             <div
               class="h-32 bg-forecast-gray flex flex-col justify-between py-2"
@@ -288,8 +319,13 @@
             </div>
           </div>
 
-          <div class="flex flex-col" ref="coltwo">
-            <div class="text-center text-sm">{{ dayTwo.day }}</div>
+          <div
+            ref="coltwo"
+            class="flex flex-col"
+          >
+            <div class="text-center text-sm">
+              {{ dayTwo.day }}
+            </div>
             <div class="text-center text-xxs font-bold mb-2">
               {{ dayTwo.date }}
             </div>
@@ -300,7 +336,7 @@
                 v-if="dayTwo.icon.length > 42"
                 :src="dayTwo.icon"
                 class="h-8"
-              />
+              >
             </div>
             <div
               class="h-32 bg-forecast-gray flex flex-col justify-between py-2"
@@ -314,8 +350,13 @@
             </div>
           </div>
 
-          <div class="flex flex-col" ref="colthree">
-            <div class="text-center text-sm">{{ dayThree.day }}</div>
+          <div
+            ref="colthree"
+            class="flex flex-col"
+          >
+            <div class="text-center text-sm">
+              {{ dayThree.day }}
+            </div>
             <div class="text-center text-xxs font-bold mb-2">
               {{ dayThree.date }}
             </div>
@@ -326,7 +367,7 @@
                 v-if="dayThree.icon.length > 42"
                 :src="dayThree.icon"
                 class="h-8"
-              />
+              >
             </div>
             <div
               class="h-32 bg-forecast-gray flex flex-col justify-between py-2"
@@ -340,8 +381,13 @@
             </div>
           </div>
 
-          <div class="flex flex-col" ref="colfour">
-            <div class="text-center text-sm">{{ dayFour.day }}</div>
+          <div
+            ref="colfour"
+            class="flex flex-col"
+          >
+            <div class="text-center text-sm">
+              {{ dayFour.day }}
+            </div>
             <div class="text-center text-xxs font-bold mb-2">
               {{ dayFour.date }}
             </div>
@@ -352,7 +398,7 @@
                 v-if="dayFour.icon.length > 42"
                 :src="dayFour.icon"
                 class="h-8"
-              />
+              >
             </div>
             <div
               class="h-32 bg-forecast-gray flex flex-col justify-between py-2"
@@ -366,8 +412,13 @@
             </div>
           </div>
 
-          <div class="flex flex-col" ref="colfive">
-            <div class="text-center text-sm">{{ dayFive.day }}</div>
+          <div
+            ref="colfive"
+            class="flex flex-col"
+          >
+            <div class="text-center text-sm">
+              {{ dayFive.day }}
+            </div>
             <div class="text-center text-xxs font-bold mb-2">
               {{ dayFive.date }}
             </div>
@@ -378,7 +429,7 @@
                 v-if="dayFive.icon.length > 42"
                 :src="dayFive.icon"
                 class="h-8"
-              />
+              >
             </div>
             <div
               class="h-32 bg-forecast-gray flex flex-col justify-between py-2"
@@ -392,8 +443,13 @@
             </div>
           </div>
 
-          <div class="flex flex-col" ref="colsix">
-            <div class="text-center text-sm">{{ daySix.day }}</div>
+          <div
+            ref="colsix"
+            class="flex flex-col"
+          >
+            <div class="text-center text-sm">
+              {{ daySix.day }}
+            </div>
             <div class="text-center text-xxs font-bold mb-2">
               {{ daySix.date }}
             </div>
@@ -404,7 +460,7 @@
                 v-if="daySix.icon.length > 42"
                 :src="daySix.icon"
                 class="h-8"
-              />
+              >
             </div>
             <div
               class="h-32 bg-forecast-gray flex flex-col justify-between py-2"
@@ -418,8 +474,15 @@
             </div>
           </div>
         </div>
-        <div class="max-w-full w-full absolute top-1/2 h-128" id="chart_id">
-          <svg class="chart" style="width: 100%" id="svg">
+        <div
+          id="chart_id"
+          class="max-w-full w-full absolute top-1/2 h-128"
+        >
+          <svg
+            id="svg"
+            class="chart"
+            style="width: 100%"
+          >
             <polyline
               id="polyline"
               fill="none"
@@ -438,8 +501,8 @@
             /> -->
 
             <circle
-              :cx="colOne"
               v-if="dayOne.point > 0"
+              :cx="colOne"
               :cy="dayOne.point"
               r="5"
               stroke="#F58025"
@@ -447,8 +510,8 @@
               fill="#F58025"
             />
             <circle
-              :cx="colTwo"
               v-if="dayTwo.point > 0"
+              :cx="colTwo"
               :cy="dayTwo.point"
               r="5"
               stroke="#F58025"
@@ -456,8 +519,8 @@
               fill="#F58025"
             />
             <circle
-              :cx="colThree"
               v-if="dayThree.point > 0"
+              :cx="colThree"
               :cy="dayThree.point"
               r="5"
               stroke="#F58025"
@@ -465,8 +528,8 @@
               fill="#F58025"
             />
             <circle
-              :cx="colFour"
               v-if="dayFour.point > 0"
+              :cx="colFour"
               :cy="dayFour.point"
               r="5"
               stroke="#F58025"
@@ -474,8 +537,8 @@
               fill="#F58025"
             />
             <circle
-              :cx="colFive"
               v-if="dayFive.point > 0"
+              :cx="colFive"
               :cy="dayFive.point"
               r="5"
               stroke="#F58025"
@@ -483,8 +546,8 @@
               fill="#F58025"
             />
             <circle
-              :cx="colSix"
               v-if="daySix.point > 0"
+              :cx="colSix"
               :cy="daySix.point"
               r="5"
               stroke="#F58025"
@@ -493,8 +556,8 @@
             />
 
             <line
-              :x1="colOne"
               v-if="dayOne.point > 0"
+              :x1="colOne"
               :y1="dayOne.point"
               :x2="colTwo"
               :y2="dayTwo.point"
@@ -502,8 +565,8 @@
               stroke="#F58025"
             />
             <line
-              :x1="colTwo"
               v-if="dayTwo.point > 0"
+              :x1="colTwo"
               :y1="dayTwo.point"
               :x2="colThree"
               :y2="dayThree.point"
@@ -511,8 +574,8 @@
               stroke="#F58025"
             />
             <line
-              :x1="colThree"
               v-if="dayThree.point > 0"
+              :x1="colThree"
               :y1="dayThree.point"
               :x2="colFour"
               :y2="dayFour.point"
@@ -520,8 +583,8 @@
               stroke="#F58025"
             />
             <line
-              :x1="colFour"
               v-if="dayFour.point > 0"
+              :x1="colFour"
               :y1="dayFour.point"
               :x2="colFive"
               :y2="dayFive.point"
@@ -529,8 +592,8 @@
               stroke="#F58025"
             />
             <line
-              :x1="colFive"
               v-if="dayFive.point > 0"
+              :x1="colFive"
               :y1="dayFive.point"
               :x2="colSix"
               :y2="daySix.point"
@@ -605,7 +668,10 @@ let origin = window.location.origin;
 const domain = origin + "/img/forecast/";
 
 export default {
-  name: "forecast",
+  name: "Forecast",
+  components: {
+    TopNavigation,
+  },
   data() {
     return {
       customData: false,
@@ -736,6 +802,49 @@ export default {
       currentMonthString: null,
       currentYearString: null,
     };
+  },
+  computed: {
+    getWeekGenerated: function () {
+      let val =
+        parseFloat(this.dayOne.generated) +
+        parseFloat(this.dayTwo.generated) +
+        parseFloat(this.dayThree.generated) +
+        parseFloat(this.dayFour.generated) +
+        parseFloat(this.dayFive.generated) +
+        parseFloat(this.daySix.generated);
+
+      let total = String(Math.round(val * 100) / 100);
+      let totalSplit = total.split(".");
+
+      let output = {
+        dollar: totalSplit[0],
+        cents: totalSplit[1],
+      };
+
+      return output;
+    },
+    icon: function () {
+      if (this.weatherDescription.length > 2) {
+        return domain + this.weatherIcon + "@2x.png";
+      } else {
+        return "/img//02d@2x.png";
+      }
+    },
+
+    description: function () {
+      if (!this.geoError && this.weatherDescription.length > 2) {
+        var words = this.weatherDescription.split(" ");
+        var CapitalizedWords = [];
+        words.forEach((element) => {
+          CapitalizedWords.push(
+            element[0].toUpperCase() + element.slice(1, element.length)
+          );
+        });
+        return CapitalizedWords.join(" ");
+      } else {
+        return "Partly Cloudy";
+      }
+    },
   },
   created() {
     this.getGeoLoc();
@@ -1183,49 +1292,6 @@ export default {
       window.sessionStorage.setItem("pagesViewed", JSON.stringify(ls));
     }
   },
-  computed: {
-    getWeekGenerated: function () {
-      let val =
-        parseFloat(this.dayOne.generated) +
-        parseFloat(this.dayTwo.generated) +
-        parseFloat(this.dayThree.generated) +
-        parseFloat(this.dayFour.generated) +
-        parseFloat(this.dayFive.generated) +
-        parseFloat(this.daySix.generated);
-
-      let total = String(Math.round(val * 100) / 100);
-      let totalSplit = total.split(".");
-
-      let output = {
-        dollar: totalSplit[0],
-        cents: totalSplit[1],
-      };
-
-      return output;
-    },
-    icon: function () {
-      if (this.weatherDescription.length > 2) {
-        return domain + this.weatherIcon + "@2x.png";
-      } else {
-        return "/img//02d@2x.png";
-      }
-    },
-
-    description: function () {
-      if (!this.geoError && this.weatherDescription.length > 2) {
-        var words = this.weatherDescription.split(" ");
-        var CapitalizedWords = [];
-        words.forEach((element) => {
-          CapitalizedWords.push(
-            element[0].toUpperCase() + element.slice(1, element.length)
-          );
-        });
-        return CapitalizedWords.join(" ");
-      } else {
-        return "Partly Cloudy";
-      }
-    },
-  },
 
   methods: {
     toFixed(num, fixed) {
@@ -1669,9 +1735,6 @@ export default {
         }
       };
     },
-  },
-  components: {
-    TopNavigation,
   },
 };
 </script>

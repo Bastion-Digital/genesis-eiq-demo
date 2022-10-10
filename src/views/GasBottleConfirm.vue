@@ -1,40 +1,56 @@
-<template >
-        <div class="bg-white">
-          <div class="flex-grow-0 text-left w-full top bottom gen-bg text-white above">
-            
-          </div>
+<template>
+  <div class="bg-white">
+    <div class="flex-grow-0 text-left w-full top bottom gen-bg text-white above" />
          
-              <div>
-                <div class="push ">
-                  <h2 class="text-center text-white text-xl font-semibold p-4 duration-500">Two days later...</h2>
-                  <img v-if="showSecurity" :src="security" class="w-full"/>  
-                  <div v-if="showMessage" class="pt-4">
-                    <img :src="message" class="w-full"/>  
-                  </div>
-                  <div v-if="showNext" class="w-full mt-4 text-white pt-4 px-4 z-10">
-                    <p class="text-md text-center w-full">
-                      With Energy IQ, you can order new gas bottles via the app for fast delivery.
-                    </p>
-                  </div>
-                  <div class="w-full flex align-center justify-center opacity-70 mt-4">
-                    <button v-if="showDismiss" type='button' @click="Continue()" class='z-10 cursor-pointer text-center p-2 mt-2 text-white'>
-                      <div class='text-gray-200 border-2 rounded-full px-4 py-1'>Dismiss</div>
-                    </button>
-                  </div>
-
-
-                </div>
-              </div>
-             
+    <div>
+      <div class="push ">
+        <h2 class="text-center text-white text-xl font-semibold p-4 duration-500">
+          Two days later...
+        </h2>
+        <img
+          v-if="showSecurity"
+          :src="security"
+          class="w-full"
+        >  
+        <div
+          v-if="showMessage"
+          class="pt-4"
+        >
+          <img
+            :src="message"
+            class="w-full"
+          >  
         </div>
-        <div class="overlay blur md:rounded-xl z-10 bg-white"></div>
-        <orderView />
-         <!-- <CtaCard
+        <div
+          v-if="showNext"
+          class="w-full mt-4 text-white pt-4 px-4 z-10"
+        >
+          <p class="text-md text-center w-full">
+            With Energy IQ, you can order new gas bottles via the app for fast delivery.
+          </p>
+        </div>
+        <div class="w-full flex align-center justify-center opacity-70 mt-4">
+          <button
+            v-if="showDismiss"
+            type="button"
+            class="z-10 cursor-pointer text-center p-2 mt-2 text-white"
+            @click="Continue()"
+          >
+            <div class="text-gray-200 border-2 rounded-full px-4 py-1">
+              Dismiss
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="overlay blur md:rounded-xl z-10 bg-white" />
+  <orderView />
+  <!-- <CtaCard
           class="fixed"
           style="bottom: 2em"
           :isGenesis="isGenesisCustomer"
         /> -->
-
 </template>
 
 <script>
@@ -49,6 +65,11 @@ import TopNavigation from "@/components/TopNavigation.vue";
 
 export default {
   name: "Usage",
+  components: { 
+  // CtaCard, 
+  //TopNavigation, 
+  'orderView': orderView
+  },
   data() {
     return {
       isGenesisCustomer: false,
@@ -95,11 +116,6 @@ export default {
       window.sessionStorage.setItem('pagesViewed', JSON.stringify(ls));
     }
 
-  },
-  components: { 
-  // CtaCard, 
-  //TopNavigation, 
-  'orderView': orderView
   },
   methods: {
     Continue() {

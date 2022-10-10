@@ -2,19 +2,38 @@
   <div clss="flex flex-col justify-start">
     <div class="relative bg-green-500 h-auto flex-grow">
       <!-- Overlay Image -->
-      <div v-if="showOverlay" class="absolute inset-0">
+      <div
+        v-if="showOverlay"
+        class="absolute inset-0"
+      >
         <!-- X Icon -->
-        <router-link to="/" class="md:absolute fixed z-10 left-2 top-4">
-          <svg class="w-6 inline-flex rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        <router-link
+          to="/"
+          class="md:absolute fixed z-10 left-2 top-4"
+        >
+          <svg
+            class="w-6 inline-flex rotate-180"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
           </svg>
-          <h3 class="inline-flex">Back</h3>
+          <h3 class="inline-flex">
+            Back
+          </h3>
         </router-link>
 
 
         <CtaCard
-          class="fixed" style="bottom: 2em;"
-          :isGenesis="isGenesisCustomer"
+          class="fixed"
+          style="bottom: 2em;"
+          :is-genesis="isGenesisCustomer"
         />
 
         <transition name="bounce">
@@ -26,7 +45,7 @@
             <div
               class="absolute -bottom-2 triangle-up"
               style="left: 47.5%"
-            ></div>
+            />
             <p class="text-sm text-center">
               Free hours when you need them most, with Power Shout.
             </p>
@@ -34,7 +53,10 @@
         </transition>
 
         <div class="relative">
-          <img class="object-cover background" :src="soup" />
+          <img
+            class="object-cover background"
+            :src="soup"
+          >
         </div>
       </div>
     </div>
@@ -49,7 +71,10 @@ import soup from "/src/assets/soup.png";
 import CtaCard from "@/components/ctaCard.vue";
 
 export default {
-  name: "powerShoutTip",
+  name: "PowerShoutTip",
+  components: {
+    CtaCard,
+  },
   data() {
     return {
       showOverlay: true,
@@ -90,9 +115,6 @@ export default {
     if (showMessage === null) {
       setTimeout(() => this.showNotificationCalander(), 4000);
     }
-  },
-  components: {
-    CtaCard,
   },
   methods: {
     showNotificationCalander() {

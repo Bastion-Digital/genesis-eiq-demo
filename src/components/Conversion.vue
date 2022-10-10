@@ -1,21 +1,22 @@
 <template>
-      <div class="pill">
-        <button 
-        @click="active = 'dollar'" 
-        class="pill-inner-left" 
-        v-bind:class="[active == 'dollar' ? 'active' : '']"
-        >
-        <span class="pill-text">$</span>
-        </button>
+  <div class="pill">
+    <button 
+      class="pill-inner-left" 
+      :class="[active == 'dollar' ? 'active' : '']" 
+      @click="active = 'dollar'"
+    >
+      <span class="pill-text">$</span>
+    </button>
 
 
-        <button 
-        @click="active = 'kwh'"  
-        class="pill-inner-right"
-        v-bind:class="[active == 'kwh' ? 'active' : '']"
-        >
-        <span class="pill-text">kWh</span></button>
-      </div>
+    <button 
+      class="pill-inner-right"  
+      :class="[active == 'kwh' ? 'active' : '']"
+      @click="active = 'kwh'"
+    >
+      <span class="pill-text">kWh</span>
+    </button>
+  </div>
 </template>
 
 <script>

@@ -6,8 +6,7 @@
       type="bar"
       :options="chartOptions"
       :series="series"
-      
-    ></apexchart>
+    />
   </div>
 </template>
 

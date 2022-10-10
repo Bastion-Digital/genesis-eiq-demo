@@ -2,9 +2,15 @@
   <div clss="flex flex-col justify-start">
     <div class="relative bg-green-500 h-auto flex-grow">
       <!-- Overlay Image -->
-      <div v-if="showOverlay" class="absolute inset-0">
+      <div
+        v-if="showOverlay"
+        class="absolute inset-0"
+      >
         <!-- X Icon -->
-        <router-link to="/" class="md:absolute fixed z-10 right-4 top-4">
+        <router-link
+          to="/"
+          class="md:absolute fixed z-10 right-4 top-4"
+        >
           <svg
             width="24"
             height="24"
@@ -34,7 +40,7 @@
         <CtaCard
           class="fixed"
           style="bottom: 2em"
-          :isGenesis="isGenesisCustomer"
+          :is-genesis="isGenesisCustomer"
         />
 
         <transition name="bounce">
@@ -46,7 +52,7 @@
             <div
               class="absolute -bottom-2 triangle-up"
               style="left: 47.5%"
-            ></div>
+            />
             <p class="text-sm text-center">
               With Genesis LPG Bottled Gas delivery, you can order new bottles
               via the app for fast delivery and install.
@@ -54,7 +60,10 @@
           </div>
         </transition>
 
-        <img class="object-cover background" :src="gasdelivered" />
+        <img
+          class="object-cover background"
+          :src="gasdelivered"
+        >
       </div>
     </div>
   </div>
@@ -69,6 +78,7 @@ import CtaCard from "@/components/ctaCard.vue";
 
 export default {
   name: "Usage",
+  components: { CtaCard },
   data() {
     return {
       isGenesisCustomer: false,
@@ -95,7 +105,6 @@ export default {
       this.isGenesisCustomer = false;
     }
   },
-  components: { CtaCard },
   methods: {
     counterUp() {
       if (this.counter < 10) {

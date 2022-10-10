@@ -1,5 +1,8 @@
 <template>
-  <intersect @enter="msg = 'Intersected'" @leave="msg = 'Not intersected'">
+  <intersect
+    @enter="msg = 'Intersected'"
+    @leave="msg = 'Not intersected'"
+  >
     <div>{{ msg }}</div>
   </intersect>
 </template>

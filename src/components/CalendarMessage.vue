@@ -1,11 +1,16 @@
 <!-- This component is for the top navigation with the arrow, page name etc -->
 <template>
   <div class="w-full notification-wrap">
-      <transition name="slide-fade">
-            <div ><img :src='notificationImage' alt="notification image" class="notification"></div>
-      </transition>
-</div>
-    
+    <transition name="slide-fade">
+      <div>
+        <img
+          :src="notificationImage"
+          alt="notification image"
+          class="notification"
+        >
+      </div>
+    </transition>
+  </div>
 </template>
 
 <script>
@@ -13,22 +18,22 @@ import notificationCalendar from "/src/assets/calendar.png";
 
 export default {
   name: "CalandarNotification",
+  components: {
+    
+  },
   data: function() {
     return {
         notificationImage: notificationCalendar,
     };
   },
-  methods: {
-  
+  computed: {
+
   },
   mounted() {
 
   },
-  computed: {
-
-  },
-  components: {
-    
+  methods: {
+  
   },
 };
 </script>

@@ -1,44 +1,86 @@
-<template >
-<div class="bg-white h-full">
-    <div class="overlay absolute" v-if="showSpeechBubble"> </div>
+<template>
+  <div class="bg-white h-full">
+    <div
+      v-if="showSpeechBubble"
+      class="overlay absolute"
+    />
   
-  <!-- Dashboard Heading -->
-  <div>
-    <div class="flex-grow-0 text-left w-full top bottom gen-bg text-white">
-      <div v-if="showSpeechBubble" >
+    <!-- Dashboard Heading -->
+    <div>
+      <div class="flex-grow-0 text-left w-full top bottom gen-bg text-white">
+        <div v-if="showSpeechBubble">
           <div class="absolute left-1/2 mt-32 bg-white bubble text-black shadow rounded-xl p-6 way-above">
-              <div class="absolute -bottom-2 triangle-up " style="left: 47.5%;"></div>
-              <p class='text-sm text-center'>Energy Usage helps you pinpoint the times when you use the most power. Scroll across and tap below to continue. </p>
+            <div
+              class="absolute -bottom-2 triangle-up "
+              style="left: 47.5%;"
+            />
+            <p class="text-sm text-center">
+              Energy Usage helps you pinpoint the times when you use the most power. Scroll across and tap below to continue.
+            </p>
           </div>
         </div>
-      <TopNavigation title="Total Usage" conversionActive="false" link="/" />
-      <!-- Header -->
-      <div class="sides pt-6">
-        <div class="text-sm font-light">Average Hourly Usage</div>
-        <div class='flex mt-1'>
-          <div class="tracking-wide text-left text-2xl font-semibold font-largecurrency">$</div>
-          <div class="tracking-wide text-left text-5xl font-semibold font-largecurrency">2</div>
-          <div class="tracking-wide text-left text-2xl font-semibold font-largecurrency">.97</div>
+        <TopNavigation
+          title="Total Usage"
+          conversion-active="false"
+          link="/"
+        />
+        <!-- Header -->
+        <div class="sides pt-6">
+          <div class="text-sm font-light">
+            Average Hourly Usage
+          </div>
+          <div class="flex mt-1">
+            <div class="tracking-wide text-left text-2xl font-semibold font-largecurrency">
+              $
+            </div>
+            <div class="tracking-wide text-left text-5xl font-semibold font-largecurrency">
+              2
+            </div>
+            <div class="tracking-wide text-left text-2xl font-semibold font-largecurrency">
+              .97
+            </div>
+          </div>
         </div>
       </div>
-      
-    </div>
-    <div class='flex justify-around w-full text-gray-400 text-sm'>
-      <router-link to="/usage/monthly" class='focus:outline-none tab'>Monthly</router-link>
-      <router-link to="/usage/daily" class='focus:outline-none tab'>Daily</router-link>
-      <router-link to="/usage/hourly" class='focus:outline-none font-bold text-genesis-orange tab active-tab'>Hourly</router-link>
-    </div>
-    <div class="overflow-x-scroll relative flex-grow flex flex-col justify-center space-y-4 bg-white">
-      <!-- <img :src="hair" class="absolute front" style="width: 40px; left: 47.5%; margin-top: -2em; " /> -->
-      <div class="absolute z-10 top-5 right-5 flex text-xs font-light align-center justify-center">
-        <div class="rounded-50 half-gradient w-3 h-3 mr-2 " style="margin-top: 2px;"></div>
-        Electricity
+      <div class="flex justify-around w-full text-gray-400 text-sm">
+        <router-link
+          to="/usage/monthly"
+          class="focus:outline-none tab"
+        >
+          Monthly
+        </router-link>
+        <router-link
+          to="/usage/daily"
+          class="focus:outline-none tab"
+        >
+          Daily
+        </router-link>
+        <router-link
+          to="/usage/hourly"
+          class="focus:outline-none font-bold text-genesis-orange tab active-tab"
+        >
+          Hourly
+        </router-link>
       </div>
-      <div class="w-full usage pt-8 pb-32 above" >
-         <router-link to="/usage/tip" >
-          <BarChart :chartOptions="this.chartOptions" :series="this.series" class="internal-usage pr-16" id="chart" />
-         </router-link>
-      </div>
+      <div class="overflow-x-scroll relative flex-grow flex flex-col justify-center space-y-4 bg-white">
+        <!-- <img :src="hair" class="absolute front" style="width: 40px; left: 47.5%; margin-top: -2em; " /> -->
+        <div class="absolute z-10 top-5 right-5 flex text-xs font-light align-center justify-center">
+          <div
+            class="rounded-50 half-gradient w-3 h-3 mr-2 "
+            style="margin-top: 2px;"
+          />
+          Electricity
+        </div>
+        <div class="w-full usage pt-8 pb-32 above">
+          <router-link to="/usage/tip">
+            <BarChart
+              id="chart"
+              :chart-options="chartOptions"
+              :series="series"
+              class="internal-usage pr-16"
+            />
+          </router-link>
+        </div>
 
       <!-- Speech Bubble
         <div v-if="showSpeechBubble"  class="absolute left-16 top-24 w-3/4 h-16">
@@ -47,8 +89,8 @@
             <p class='text-xs'>Monthly view shows seasonal usage trends. Click on June's bar to view this day by day.</p>
             </div>
         </div> -->
+      </div>
     </div>
-  </div>
   </div>
 </template>
 
@@ -66,6 +108,10 @@ import playstore from "/src/assets/playstore.png";
 
 export default {
   name: "Usage",
+  components: {
+    BarChart,
+    TopNavigation
+  },
   data() {
     return {
       // hair: hair,
@@ -180,7 +226,6 @@ export default {
       
     };
   },
-  methods: {},
     created(){
     let GC = sessionStorage.getItem("GC")
     if (GC === 'true') {
@@ -203,10 +248,7 @@ export default {
     }
     setTimeout(() => this.showSpeechBubble = true, 3000);
   },
-  components: {
-    BarChart,
-    TopNavigation
-  },
+  methods: {},
 
 };
 </script>

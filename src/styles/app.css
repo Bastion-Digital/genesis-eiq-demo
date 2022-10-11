@@ -14,7 +14,15 @@
   }
 }
 
+@font-face {
+  font-family: "Circular";
+  src: url("../assets/fonts/CircularStd-Medium.otf");
+}
+
 body {
+  @apply font-circular;
+  -webkit-font-smoothing: antialiased;
+
   touch-action: manipulation;
 }
 

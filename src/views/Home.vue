@@ -83,9 +83,7 @@
                     class="w-8 h-8 object-cover rounded-full mr-2 self-start"
                     :src="avatar"
                   />
-                  <div class="text-white text-lg font-semibold self-start">
-                    Alex Smith
-                  </div>
+                  <div class="text-white text-lg self-start">Alex Smith</div>
                 </div>
                 <div class="flex">
                   <img
@@ -101,13 +99,21 @@
               <!-- Banner -->
               <router-link to="/powershouthours">
                 <div
-                  class="bg-white absolute left-[12.5%] w-3/4 py-4 px-6 mt-6 rounded-[24px] bg-opacity-[0.85] backdrop-blur-md flex justify-center items-center mx-auto"
+                  class="bg-white absolute left-[12.5%] w-3/4 py-4 px-6 mt-6 rounded-[24px] bg-opacity-[0.85] backdrop-blur-md flex justify-between items-center mx-auto"
                 >
-                  <img class="pr-4 w-20" src="../assets/party.svg" alt="" />
-                  <p class="font-semibold text-xl">
+                  <img
+                    class="pr-4 w-16 lg:w-20"
+                    src="../assets/party.svg"
+                    alt=""
+                  />
+                  <p class="text-md lg:text-lg">
                     You have 8 hours of FREE power!
                   </p>
-                  <img class="pl-2 w-14" src="../assets/more.svg" alt="" />
+                  <img
+                    class="pl-2 w-12 lg:w-14"
+                    src="../assets/more.svg"
+                    alt=""
+                  />
                 </div>
               </router-link>
 
@@ -118,7 +124,7 @@
               <div class="flex">
                 <div class="w-1/4 flex flex-col justify-center items-center" />
                 <div class="w-full flex flex-col justify-center items-center">
-                  <p class="font-bold text-white pb-2">Nothing due 👍</p>
+                  <p class="text-white pb-2">Nothing due 👍</p>
                   <button
                     class="mx-auto rounded-full px-12 py-6 bg-white shadow-lg"
                     @click="clearPagesViews()"
@@ -167,7 +173,11 @@
                           :class="showForecastSpeechBubble && 'z-10'"
                           class="shadow-lg rounded-full bg-white w-12 h-12 flex justify-center items-center"
                         >
-                          <img class="w-10 h-10 mt-2" :src="cloud" alt="" />
+                          <img
+                            class="w-9 object-cover"
+                            src="../assets/sunny-cloud-1.png"
+                            alt=""
+                          />
                         </button>
                       </div>
                     </router-link>
@@ -189,7 +199,11 @@
                           :class="showForecastSpeechBubble && 'z-10'"
                           class="shadow-lg rounded-full bg-white w-12 h-12 flex justify-center items-center"
                         >
-                          <img class="w-10 h-10 mt-2" :src="cloud" alt="" />
+                          <img
+                            class="w-9 object-cover"
+                            src="../assets/sunny-cloud-1.png"
+                            alt=""
+                          />
                         </button>
                       </div>
                     </router-link>
@@ -206,7 +220,7 @@
             </div>
           </div>
           <div class="flex flex-col mt-2 space-y-4 justify-center items-center">
-            <h3 class="font-semibold text-xl">This month so far you've used</h3>
+            <h3 class="text-xl">This month so far you've used</h3>
             <div class="flex justify-start items-start">
               <div>
                 <span
@@ -230,8 +244,8 @@
                   alt=""
                 />
                 <div>
-                  <h4 class="text-xl font-semibold">Electricity</h4>
-                  <p class="text-orange text-xl font-semibold">$38.20</p>
+                  <h4 class="text-xl">Electricity</h4>
+                  <p class="text-orange text-xl">$38.20</p>
                 </div>
               </div>
               <div class="min-w-1/2 flex justify-center items-center space-x-2">
@@ -241,8 +255,7 @@
                   alt=""
                 />
                 <div>
-                  <h4 class="text-xl font-semibold">Gas</h4>
-                  <p class="text-orange text-xl font-semibold">$10.92</p>
+                  <h4 class="text-xl">Gas</h4>
                 </div>
               </div>
             </div>
@@ -250,12 +263,12 @@
 
             <div class="flex flex-col justify-center items-center pb-12">
               <div class="flex pb-3">
-                <h3 class="font-semibold text-lg">Estimated bill $182.70</h3>
+                <h3 class="text-lg">Estimated bill $182.70</h3>
                 <img class="pl-1" src="../assets/Info.svg" alt="" />
               </div>
               <div class="w-full">
                 <img class="w-full" src="../assets/progress.svg" alt="" />
-                <div class="flex w-full justify-between pt-2 font-semibold">
+                <div class="flex w-full justify-between pt-2">
                   <p>16 Jan to 17 Feb</p>
                   <p>23 days left</p>
                 </div>
@@ -471,7 +484,6 @@
           <!-- End USAGE -->
 
           <!-- Order Bottled Gas -->
-
           <div
             v-if="viewed.electricityUsage == true && viewed.orderGas != true"
             class="z-10"
@@ -582,6 +594,7 @@
               </div>
             </router-link>
           </div>
+          <div id="bottledGasAnchor" class="relative h-0 -translate-y-64"></div>
 
           <div
             v-if="viewed.orderGas == true || viewed.electricityUsage != true"
@@ -780,7 +793,8 @@
                         class="w-full h-full flex justify-center items-center pl-1 text-sm text-left"
                       >
                         <div class="pl-3 pr-6 text-lg text-left">
-                          You have free power available to book.
+                          Power Shout hours give you the flexibility to enjoy
+                          free electricity anytime you like.
                         </div>
                       </div>
                     </div>
@@ -870,7 +884,8 @@
                         class="w-full h-full flex justify-center items-center pl-1 text-sm text-left"
                       >
                         <div class="pl-3 pr-6 text-lg text-left">
-                          You have free power available to book.
+                          Power Shout hours give you the flexibility to enjoy
+                          free electricity anytime you like.
                         </div>
                       </div>
                     </div>
@@ -1347,6 +1362,8 @@ import { useHouseStore } from "@/stores/house";
 import router from "../router";
 
 import { defineAsyncComponent, onMounted } from "vue";
+import { scrollIntoView } from "seamless-scroll-polyfill";
+
 // URL
 let origin = window.location.origin;
 const domain = origin + "/img/forecast/";
@@ -2189,11 +2206,15 @@ export default {
 
       this.showGasBottleSpeechBubble = true;
 
-      document.getElementById("bottledGas").scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-        inline: "start",
-      });
+      setTimeout(
+        () =>
+          scrollIntoView(document.getElementById("bottledGasAnchor"), {
+            behavior: "smooth",
+            block: "center",
+            inline: "start",
+          }),
+        200
+      );
     }
 
     if (
@@ -2209,7 +2230,7 @@ export default {
 
       setTimeout(
         () =>
-          document.getElementById("powerShoutAnchor").scrollIntoView({
+          scrollIntoView(document.getElementById("powerShoutAnchor"), {
             behavior: "smooth",
             block: "nearest",
             inline: "start",
@@ -2679,7 +2700,7 @@ export default {
         event_label: "Started Guided Journey",
       });
 
-      document.getElementById("electricity-anchor").scrollIntoView({
+      scrollIntoView(document.getElementById("electricity-anchor"), {
         behavior: "smooth",
         block: "nearest",
         inline: "start",

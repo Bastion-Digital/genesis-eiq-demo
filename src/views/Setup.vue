@@ -6,7 +6,7 @@
     </div>
   </div>
   <div v-if="question == 0" class="sides mt-14">
-    <h1 class="text-white font-normal text-3xl px-8 pb-8">
+    <h1 class="text-white text-center font-normal text-3xl px-8 pb-8">
       To begin, select a house to display on your dashboard
     </h1>
     <div class="flex flex-wrap justify-between w-full">
@@ -108,6 +108,7 @@
 import { useHouseStore } from "@/stores/house";
 import { defineAsyncComponent } from "vue";
 import router from "../router/index";
+import { polyfill } from "seamless-scroll-polyfill";
 
 const houseState = useHouseStore();
 
@@ -115,10 +116,12 @@ export default {
   name: "SetupInit",
 
   setup() {
+    polyfill();
+
     const houses = [
       {
         filename: "Villa",
-        name: "Villa / Bungalow",
+        name: "Villa",
       },
       { filename: "Townhouse", name: "Townhouse" },
       { filename: "Apartment", name: "Apartment" },

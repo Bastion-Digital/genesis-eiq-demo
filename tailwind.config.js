@@ -20,6 +20,7 @@ module.exports = {
         "forecast-gray": "#EEEEEE",
       },
       fontFamily: {
+        circular: ["Circular", "sans-serif"],
         largecurrency: ["Big Shoulders Display", "sans-serif"],
       },
       width: {

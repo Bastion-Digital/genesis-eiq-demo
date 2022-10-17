@@ -10,9 +10,7 @@ import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
 import "./styles/app.css";
 import "./styles/speech-bubbles.css"; // Here
 import "./registerServiceWorker";
-import { polyfill } from "seamless-scroll-polyfill";
 
-polyfill();
 
 const pinia = createPinia();
 const app = createApp(App);

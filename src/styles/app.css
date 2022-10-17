@@ -22,7 +22,6 @@
 body {
   @apply font-circular;
   -webkit-font-smoothing: antialiased;
-
   touch-action: manipulation;
 }
 

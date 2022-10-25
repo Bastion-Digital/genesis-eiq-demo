@@ -164,7 +164,6 @@ export default {
     },
 
     answerQuestion() {
-      console.log("Answering question");
       const house = { ...this.houseState };
 
       if (this.question === 1) {

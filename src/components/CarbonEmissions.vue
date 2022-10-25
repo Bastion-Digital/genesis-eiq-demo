@@ -4,7 +4,7 @@
       <div
         class="flex w-full text-left font-sm text-link pt-6 pb-1 px-6 text-genesis-orange text-lg"
       >
-        Usage Breakdown
+        Carbon Emissions
       </div>
       <div class="pr-6 pt-6 flex justify-center items-center">
         <svg
@@ -74,7 +74,7 @@ export default {
   name: "UsageBreakdown",
   data: function () {
     return {
-      hydroPercentage: 0,
+      hydroPercentage: 68,
       chartOptions: {
         chart: {
           type: "radialBar",

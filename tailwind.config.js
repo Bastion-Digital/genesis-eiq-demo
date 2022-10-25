@@ -10,6 +10,8 @@ module.exports = {
       },
       colors: {
         orange: "#F58025",
+        "pale-orange": "#FFF2E9",
+        green: "#7CC830",
         "genesis-orange": "#EC6A2C",
         "orange-light": "rgb(242,101,38)",
         background: "#F58025",

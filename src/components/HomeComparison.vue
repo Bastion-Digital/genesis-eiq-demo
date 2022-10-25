@@ -73,7 +73,6 @@ export default {
   name: "HomeComparison",
   props: ["houseImg"],
   data: function () {
-    console.log(this.houseImg);
     return {};
   },
   setup() {},

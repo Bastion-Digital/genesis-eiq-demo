@@ -119,7 +119,11 @@
 
               <!-- Home Image -->
               <component class="w-full h-auto" :is="houseImg"></component>
-
+              <router-link
+                v-if="houseState.car"
+                to="/ev"
+                class="absolute h-28 w-1/2 mx-auto left-[40%] -mt-36"
+              ></router-link>
               <!-- Bottom Buttons -->
               <div class="flex">
                 <div class="w-1/4 flex flex-col justify-center items-center" />
@@ -2247,8 +2251,6 @@ export default {
     ) {
       //setTimeout(() => (this.showElectricityForecastSpeechBubble = true), 2000);
       this.showForecastSpeechBubble = true;
-
-      console.log(this.showForecastSpeechBubble);
     }
   },
   methods: {

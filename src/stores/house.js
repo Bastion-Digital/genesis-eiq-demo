@@ -22,7 +22,18 @@ export const useHouseStore = defineStore("house", {
       this.car = obj.car;
       this.gas = obj.gas;
       this.solar = obj.solar;
-      localStorage.setItem("house", JSON.stringify(this));
+      localStorage.setItem(
+        "house",
+        //circular refer "solution"
+        JSON.stringify({
+          img: this.img,
+          name: this.name,
+          filename: this.filename,
+          car: this.car,
+          gas: this.gas,
+          solar: this.solar,
+        })
+      );
     },
   },
 });

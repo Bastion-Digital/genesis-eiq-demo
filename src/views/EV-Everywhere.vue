@@ -1,9 +1,11 @@
 <template>
   <div class="bg-dark-orange pt-8 flex flex-col text-light-black">
-    <div class="flex items-center sides">
-      <img src="../assets/prev.svg" class="w-8 h-8" alt="" />
-      <h2 class="text-white text-3xl ml-6">EV</h2>
-    </div>
+    <router-link to="/">
+      <div class="flex items-center sides">
+        <img src="../assets/prev.svg" class="w-8 h-8" alt="" />
+        <h2 class="text-white text-3xl ml-6">EV</h2>
+      </div></router-link
+    >
     <div class="flex w-full text-xl text-white mt-4">
       <router-link
         to="/ev/insights"
@@ -38,7 +40,7 @@
         class="flex w-1/2 p-3 px-4 bg-pale-orange text-genesis-orange mr-3 rounded-3xl"
       >
         <img class="w-10 mr-2 md:mr-4" src="../assets/day.svg" alt="" />
-        <div class="text-sm md:text-md">
+        <div class="text-sm md:text-lg">
           <p class="">Day rate</p>
           <p class=""><span class="font-semibold">$0.31</span> /kWh</p>
         </div>
@@ -47,7 +49,7 @@
         class="flex w-1/2 p-3 px-4 bg-gray-200 text-light-blackml-3 rounded-3xl"
       >
         <img class="w-10 mr-2 md:mr-4" src="../assets/night.svg" alt="" />
-        <div class="text-sm md:text-md">
+        <div class="text-sm md:text-lg">
           <p class="">Night rate</p>
           <p class=""><span class="font-semibold">$0.15</span> /kWh</p>
         </div>

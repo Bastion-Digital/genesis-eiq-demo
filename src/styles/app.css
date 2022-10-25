@@ -78,6 +78,17 @@ body {
     rgba(242, 101, 38, 1) 100%
   );
 }
+
+.gradient-alt {
+  background: rgb(242, 101, 38);
+  background: linear-gradient(
+    6deg,
+    rgba(245, 128, 37, 1) 50%,
+    rgba(245, 128, 37, 1) 50%,
+    rgba(255, 205, 0, 1) 100%
+  );
+}
+
 .half-gradient {
   background: rgb(242, 101, 38);
   background: linear-gradient(

@@ -2,7 +2,7 @@ const axios = require("axios");
 
 exports.handler = function (event, context, callback) {
   const epoch = Date.now();
-  const url = `https://www.transpower.co.nz/em6/data/current_generation/${epoch}?_=${epoch}`;
+  const url = `https://www.transpower.co.nz/em6/data/renewables_generation?_=${epoch}`;
 
   axios
     .get(url)

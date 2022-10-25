@@ -80,10 +80,11 @@ const routes = [
     component: () => import("../views/GasBottleConfirm.vue"),
   },
   {
-    path: "/usage/breakdown",
-    name: "Usage Beakdown",
+    path: "/usage/breakdown/",
+    name: "Usage Breakdown",
     component: () => import("../views/UsageBreakdown.vue"),
   },
+
   {
     path: "/usage/tip",
     name: "Usage Tip",

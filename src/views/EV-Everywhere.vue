@@ -37,8 +37,8 @@
       <div
         class="flex w-1/2 p-3 px-4 bg-pale-orange text-genesis-orange mr-3 rounded-3xl"
       >
-        <img class="w-10 mr-4" src="../assets/day.svg" alt="" />
-        <div>
+        <img class="w-10 mr-2 md:mr-4" src="../assets/day.svg" alt="" />
+        <div class="text-sm md:text-md">
           <p class="">Day rate</p>
           <p class=""><span class="font-semibold">$0.31</span> /kWh</p>
         </div>
@@ -46,8 +46,8 @@
       <div
         class="flex w-1/2 p-3 px-4 bg-gray-200 text-light-blackml-3 rounded-3xl"
       >
-        <img class="w-10 mr-4" src="../assets/night.svg" alt="" />
-        <div>
+        <img class="w-10 mr-2 md:mr-4" src="../assets/night.svg" alt="" />
+        <div class="text-sm md:text-md">
           <p class="">Night rate</p>
           <p class=""><span class="font-semibold">$0.15</span> /kWh</p>
         </div>

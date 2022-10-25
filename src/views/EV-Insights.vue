@@ -18,11 +18,16 @@
     </div>
   </div>
   <div class="flex justify-center items-center flex-col mb-12">
-    <div class="bg-light-gray w-full flex justify-center items-center flex-col">
-      <h2 class="text-3xl pt-12 pb-3">
-        Your <span class="text-genesis-orange">Tesla Model 3</span> gets you
+    <div
+      class="bg-light-gray w-full flex justify-center items-center flex-col px-3 md:px-0"
+    >
+      <h2 class="text-2xl md:text-3xl pt-12 pb-3 text-center">
+        Your
+        <span class="text-genesis-orange">Tesla Model 3</span> gets you
       </h2>
-      <p class="text-xl mb-20">50% lower rates every night 9pm - 7am</p>
+      <p class="text-md md:text-xl mb-20">
+        50% lower rates every night 9pm - 7am
+      </p>
     </div>
 
     <div class="relative w-full">
@@ -32,29 +37,29 @@
         alt=""
       />
       <div
-        class="absolute z-[7] top-[50%] -mt-8 mr-6 right-0 w-16 h-16 bg-white shadow-md rounded-full flex justify-center items-center"
+        class="absolute z-[7] top-[50%] -mt-8 mr-6 right-0 w-12 h-12 md:w-16 md:h-16 bg-white shadow-md rounded-full flex justify-center items-center"
       >
-        <img src="../assets/more.svg" class="w-8" alt="" />
+        <img src="../assets/more.svg" class="w-6 md:w-8" alt="" />
       </div>
       <div class="bg-light-gray h-1/2 w-full top-0 z-0 absolute"></div>
     </div>
   </div>
-  <div class="sides text-light-black mb-8">
+  <div class="px-3 sides text-light-black mb-8">
     <div
-      class="bg-white rounded-[24px] flex flex-col justify-center items-center py-8"
+      class="bg-white rounded-[24px] flex flex-col justify-center items-center py-8 px-3 md:px-0"
     >
       <div class="text-orange rounded-full bg-pale-orange p-2 w-4/5 flex mb-4">
         <div
           @click="timeframe = 0"
           :class="{ 'bg-orange text-white': timeframe === 0 }"
-          class="transition cursor-pointer rounded-full py-4 px-6 text-xl w-1/2 flex justify-center"
+          class="transition cursor-pointer rounded-full py-4 px-3 md:px-6 text-md md:text-xl w-1/2 flex justify-center"
         >
           September
         </div>
         <div
           @click="timeframe = 1"
           :class="{ 'bg-orange text-white': timeframe === 1 }"
-          class="transition cursor-pointer rounded-full py-4 px-6 text-xl w-1/2 flex justify-center"
+          class="transition cursor-pointer rounded-full py-4 px-3 md:px-6 text-md md:text-xl w-1/2 flex justify-center"
         >
           Last 7 days
         </div>
@@ -82,13 +87,13 @@
           EV Plan
         </p>
         <div class="w-16 mt-8 border-b-2 border-off-black opacity-30"></div>
-        <div class="flex justify-between items-center sides">
+        <div class="flex justify-between items-center px-0 md:px-4">
           <div class="w-1/4">
             <apexchart
               :options="chartOptions"
               :series="[24]"
               height="140px"
-              width="100%"
+              width="80px"
               type="radialBar"
             />
           </div>
@@ -96,13 +101,13 @@
             of your home's electricity use is at night time.
           </p>
         </div>
-        <div class="flex justify-between items-center sides">
+        <div class="flex justify-between items-center px-0 md:px-4">
           <div class="w-1/4">
             <apexchart
               :options="chartOptions"
               :series="[51]"
               height="140px"
-              width="100%"
+              width="80px"
               type="radialBar"
             />
           </div>
@@ -173,14 +178,14 @@
       <div
         @click="graph = 0"
         :class="{ 'bg-white text-orange': graph === 0 }"
-        class="transition cursor-pointer text-white rounded-full py-4 px-6 text-xl w-1/2 flex justify-center"
+        class="transition cursor-pointer text-white rounded-full py-4 px-3 md:px-6 text-md md:text-xl w-1/2 flex justify-center"
       >
         Electricity use
       </div>
       <div
         @click="graph = 1"
         :class="{ 'bg-white text-orange': graph === 1 }"
-        class="transition cursor-pointer text-white rounded-full py-4 px-6 text-xl w-1/2 flex justify-center"
+        class="transition cursor-pointer text-white rounded-full py-4 px-3 md:px-6 text-md md:text-xl w-1/2 flex justify-center"
       >
         NZ low carbon
       </div>
@@ -198,14 +203,14 @@
         Take advantage of reduced rates at reduced rates at night by using other
         appliances.
       </p>
-      <div class="flex w-3/4 mx-auto justify-between">
-        <div class="w-20 h-20 bg-pale-orange rounded-full">
+      <div class="flex w-4/5 md:w-3/4 mx-auto justify-between">
+        <div class="w-16 h-16 bg-pale-orange rounded-full">
           <img src="../assets/placeholder.png" class="" alt="" />
         </div>
-        <div class="w-20 h-20 bg-pale-orange rounded-full">
+        <div class="w-16 h-16 bg-pale-orange rounded-full">
           <img src="../assets/placeholder.png" class="" alt="" />
         </div>
-        <div class="w-20 h-20 bg-pale-orange rounded-full">
+        <div class="w-16 h-16 bg-pale-orange rounded-full">
           <img src="../assets/placeholder.png" class="" alt="" />
         </div>
       </div>

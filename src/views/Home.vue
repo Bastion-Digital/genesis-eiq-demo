@@ -260,6 +260,7 @@
                 />
                 <div>
                   <h4 class="text-xl">Gas</h4>
+                  <p class="text-orange text-xl">$10.92</p>
                 </div>
               </div>
             </div>

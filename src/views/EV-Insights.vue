@@ -192,6 +192,76 @@
         </div>
       </div>
     </div>
+    <div
+      v-if="graph === 0"
+      class="mx-8 bg-white rounded-2xl w-auto p-6 text-light-black relative"
+    >
+      <h3 class="text-xl mb-4">
+        {{ dayString }}, {{ currDate }} {{ shortMonth }} {{ currYear }}
+      </h3>
+      <div class="flex justify-between w-full text-genesis-orange text-lg mb-1">
+        <span>Day usage</span>
+        <span>45kWh for $4.50</span>
+      </div>
+      <div class="flex justify-between w-full text-lg mb-4">
+        <span>Night usage</span>
+        <span>96kWh for $5.00*</span>
+      </div>
+      <span class="text-lg"
+        >*compared to <span class="font-semibold">$10.00</span> if this was
+        during the day!</span
+      >
+      <div
+        class="w-6 h-6 bg-white left-[46.5%] -bottom-2 rotate-45 absolute"
+      ></div>
+    </div>
+    <div
+      v-else
+      class="mx-8 bg-white rounded-2xl w-auto p-6 text-light-black relative"
+    >
+      <h3 class="text-xl">
+        {{ dayString }}, {{ currDate }} {{ shortMonth }} {{ currYear }}
+      </h3>
+      <p class="text-lg mb-4">New Zealand's carbon generation</p>
+      <p class="text-lg text-genesis-orange">7% of the day was low carbon</p>
+      <p class="text-lg text-light-black mb-2">
+        90% of the night was low carbon
+      </p>
+
+      <div
+        class="w-6 h-6 bg-white left-[46.5%] -bottom-2 rotate-45 absolute"
+      ></div>
+    </div>
+    <div class="relative w-full">
+      <img
+        v-if="graph === 0"
+        class="mx-auto relative w-full z-[7]"
+        src="../assets/insightGraph.svg"
+        alt=""
+      />
+      <img
+        v-else
+        class="mx-auto relative w-full z-[7]"
+        src="../assets/carbonGraph.svg"
+        alt=""
+      />
+      <div
+        class="w-full h-[51%] absolute top-[44.5%] text-xl flex z-[8] justify-between px-[3.25rem] text-white"
+      >
+        <div class="flex flex-col" :key="date.day" v-for="date in dates">
+          <p>{{ date.day }}</p>
+          <p>{{ date.date }}</p>
+        </div>
+      </div>
+      <p
+        class="absolute uppercase font-semibold text-md text-center top-[47.5%] -rotate-90 z-[8] text-white"
+      >
+        {{ shortMonth }}
+      </p>
+      <div
+        class="w-full brown-gradient h-[54%] absolute top-[49%] rounded-b-3xl"
+      ></div>
+    </div>
   </div>
   <div class="bg-light-gray pt-8">
     <div class="sides mb-8">
@@ -201,22 +271,32 @@
         <div class="w-full text-orange text-xl mb-1">EV Insights</div>
         <h2 class="text-3xl text-light-black">
           Right now it's a 50% lower rate to charge your
-          <span class="text-orange">Tesla Model 3</span> until 7am
+          <span class="text-orange">Electric Vehicle</span> until 7am
         </h2>
-        <img src="../assets/placeholder.png" class="pb-2" alt="" />
+        <img
+          src="../assets/car-charging.svg"
+          class="pb-2 w-3/5 my-8 mx-auto"
+          alt=""
+        />
         <p class="text-off-black text-center text-lg mb-4">
           Take advantage of reduced rates at reduced rates at night by using
           other appliances.
         </p>
         <div class="flex w-4/5 md:w-3/4 mx-auto justify-between">
-          <div class="w-16 h-16 bg-pale-orange rounded-full">
-            <img src="../assets/placeholder.png" class="" alt="" />
+          <div
+            class="w-16 h-16 bg-pale-orange rounded-full flex justify-center items-center"
+          >
+            <img src="../assets/games.svg" class="m-auto w-3/5" alt="" />
           </div>
-          <div class="w-16 h-16 bg-pale-orange rounded-full">
-            <img src="../assets/placeholder.png" class="" alt="" />
+          <div
+            class="w-16 h-16 bg-pale-orange rounded-full flex justify-center items-center"
+          >
+            <img src="../assets/aircon.svg" class="m-auto w-3/5" alt="" />
           </div>
-          <div class="w-16 h-16 bg-pale-orange rounded-full">
-            <img src="../assets/placeholder.png" class="" alt="" />
+          <div
+            class="w-16 h-16 bg-pale-orange rounded-full flex justify-center items-center"
+          >
+            <img src="../assets/laundry.svg" class="m-auto w-1/2" alt="" />
           </div>
         </div>
       </div>
@@ -268,7 +348,8 @@
           NZ's electricity generation is relatively...
         </h2>
         <div class="flex" v-if="goodTimeToCharge">
-          <img src="../assets/placeholder.png" class="mr-4 w-16 h-16" alt="" />
+          <div class="mr-4 w-16 h-16 rounded-full eco-low mt-2"></div>
+
           <p class="text-off-black text-lg w-3/5">
             Low carbon right now. It's a good time to charge your EV<span
               class="font-semibold"
@@ -278,7 +359,7 @@
           </p>
         </div>
         <div class="flex" v-else>
-          <img src="../assets/placeholder.png" class="mr-4 w-16 h-16" alt="" />
+          <div class="mr-4 w-16 h-16 rounded-full eco-high mt-2"></div>
           <p class="text-off-black text-lg w-3/5">
             High carbon right now. It's not a good time to charge your EV.
           </p>
@@ -328,16 +409,18 @@
             </defs>
           </svg>
         </div>
-        <h2 class="text-3xl text-light-black mb-4">Re-gen whenever you can</h2>
+        <h2 class="text-3xl text-light-black mb-4">
+          Avoid plugging in your EV to charge as soon as you get home
+        </h2>
         <div class="flex">
           <img
-            src="../assets/placeholder.png"
+            src="../assets/coal.svg"
             class="mr-4 w-20 object-contain"
             alt=""
           />
           <p class="text-off-black text-lg w-full mr-2">
-            Keep a good following distance to make use of re-gen braking -
-            you'll get more distance out of your EV!
+            This is because from 5pm - 8pm the carbon generation is at its
+            highest in NZ.
           </p>
         </div>
       </div>
@@ -351,11 +434,32 @@ export default {
   name: "Insights",
   data: function () {
     // Creating a date object
-    var today = new Date();
+    const today = new Date();
 
     // Getting full month name (e.g. "June")
-    var month = today.toLocaleString("default", { month: "long" });
+    const month = today.toLocaleString("default", { month: "long" });
+    const shortMonth = today.toLocaleString("default", { month: "short" });
+
+    const days = ["M", "T", "W", "Th", "F", "S", "S"];
+    const date = today.getDate();
+    const day = today.getDay();
+    const year = today.getFullYear();
+    const dayString = today
+      .toLocaleString("en-us", { weekday: "long" })
+      .slice(0, 3);
+    const dates = [];
+
+    //get 3 dates on either side of current date
+    for (let i = -3; i <= 3; i++) {
+      dates.push({ day: days.at(day + i - 1), date: date + i });
+    }
+
     return {
+      dates: dates,
+      currDate: date,
+      currYear: year,
+      dayString: dayString,
+      shortMonth: shortMonth,
       currMonth: month,
       goodTimeToCharge: false,
       timeframe: 0,

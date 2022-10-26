@@ -69,6 +69,24 @@ body {
   margin-left: -100vw;
 }
 
+.eco-low {
+  background: linear-gradient(180deg, #ccecad -65%, #a0e063 113.75%), #e4f4d5;
+  box-shadow: 0px 2px 5px #e4f4d5, inset 0px 5px 10px rgba(255, 255, 255, 0.5),
+    inset 0px -8px 15px rgba(0, 0, 0, 0.14),
+    inset 0px 2px 3px rgba(255, 255, 255, 0.47),
+    inset 0px -10px 5px rgba(0, 0, 0, 0.15),
+    inset 0px 5px 5px rgba(255, 255, 255, 0.25);
+}
+
+.eco-high {
+  background: linear-gradient(180deg, #ecc5ad -65%, #e06b63 113.75%), #f4dbd5;
+  box-shadow: 0px 2px 5px #f4e5d5, inset 0px 5px 10px rgba(255, 255, 255, 0.5),
+    inset 0px -8px 15px rgba(0, 0, 0, 0.14),
+    inset 0px 2px 3px rgba(255, 255, 255, 0.47),
+    inset 0px -10px 5px rgba(0, 0, 0, 0.15),
+    inset 0px 5px 5px rgba(255, 255, 255, 0.25);
+}
+
 .linear-gradient {
   background: rgb(242, 101, 38);
   background: linear-gradient(
@@ -76,6 +94,15 @@ body {
     rgba(245, 128, 37, 1) 35%,
     rgba(242, 101, 38, 1) 85%,
     rgba(242, 101, 38, 1) 100%
+  );
+}
+
+.brown-gradient {
+  background-image: radial-gradient(
+    100% 100% at 2.14% 100%,
+    #b85305 0%,
+    #641414 38.54%,
+    #341111 90.63%
   );
 }
 

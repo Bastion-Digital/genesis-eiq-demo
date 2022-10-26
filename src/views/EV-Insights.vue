@@ -55,7 +55,7 @@
             :class="{ 'bg-orange text-white': timeframe === 0 }"
             class="transition cursor-pointer rounded-full py-4 px-3 md:px-6 text-md md:text-xl w-1/2 flex justify-center"
           >
-            September
+            {{ currMonth }}
           </div>
           <div
             @click="timeframe = 1"
@@ -350,7 +350,13 @@ import axios from "axios";
 export default {
   name: "Insights",
   data: function () {
+    // Creating a date object
+    var today = new Date();
+
+    // Getting full month name (e.g. "June")
+    var month = today.toLocaleString("default", { month: "long" });
     return {
+      currMonth: month,
       goodTimeToCharge: false,
       timeframe: 0,
       graph: 0,

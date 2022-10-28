@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white rounded-lg">
-    <div class="flex pb-3">
+    <router-link to="/usage/breakdown" class="flex pb-3">
       <div
         class="flex w-full text-left font-sm text-link pt-6 pb-1 px-6 text-genesis-orange text-lg"
       >
@@ -43,7 +43,7 @@
           </defs>
         </svg>
       </div>
-    </div>
+    </router-link>
     <div class="flex-col flex px-6">
       <h3 class="text-3xl w-[90%]">
         In roughly the last 30 days, usage from

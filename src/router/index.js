@@ -22,6 +22,26 @@ const routes = [
     component: () => import("../views/EV-Everywhere.vue"),
   },
   {
+    path: "/ecotracker",
+    name: "Eco Tracker Home",
+    component: () => import("../views/EcoTracker.vue"),
+  },
+  {
+    path: "/ecotracker/realtime",
+    name: "Eco Tracker",
+    component: () => import("../views/EcoTracker.vue"),
+  },
+  {
+    path: "/ecotracker/forecast",
+    name: "Eco Tracker Forecast",
+    component: () => import("../views/EcoTrackerForecast.vue"),
+  },
+  {
+    path: "/ecotracker/impact",
+    name: "Eco Tracker Impact",
+    component: () => import("../views/EcoTrackerImpact.vue"),
+  },
+  {
     path: "/setup",
     name: "Setup",
     component: () => import("../views/Setup.vue"),
